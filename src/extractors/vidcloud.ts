@@ -91,14 +91,6 @@ class VidCloud extends VideoExtractor {
 
       return result;
     } catch (err) {
-      if (axios.isAxiosError(err)) {
-        console.error('Axios error during extraction:', err.message);
-        if (err.request) {
-          console.error('Request URL:', err.config?.url || err.request.path);
-        }
-      } else {
-        console.error('An unexpected error occurred:', err);
-      }
       throw err;
     }
   };
